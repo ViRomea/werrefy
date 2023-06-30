@@ -236,6 +236,7 @@ async def __bal(ctx, member: discord.Member=None):
 	b=c.fetchone()[0]
    # await ctx.send(b)
 	e = discord.Embed(title=f'**:credit_card: ¿~ Карта {member.name} ~¿ :credit_card:**',description=f"**:busts_in_silhouette:| Личные:**\n **{b}** ",color=0x42f566)
+	e.set_footer(text=f"{ctx.author.name} ×◊× Rawec", icon_url=str(ctx.author.display_avatar))
 	#print(" e=") 
    # print("jjjj")
 	await ctx.send(embed=e)
@@ -261,6 +262,7 @@ async def __inv(ctx, member: discord.Member=None):
 	   # print(tank)
 		heads=["Кол-во", "Ресурс"]
 		e=discord.Embed(title=f"**Инвентарь {member.name}**", description=f"{tb(a, headers=heads, tablefmt='simple', numalign='center')}")
+		e.set_footer(text=f"{ctx.author.name} ×◊× Rawec", icon_url=str(ctx.author.display_avatar))
 	   # #(text=f"{member.name} × Rawec", icon_url=member.avatar_url)
 		await ctx.send(embed=e)
 
@@ -281,9 +283,9 @@ async def __magaz(ctx, member: discord.Member=None):
 	print(tank)
 	heads=["Цена", "Предмет"]
 	e=discord.Embed(title=f"**Магазин вашего сервера**", description=f"{tb(tank, headers=heads, tablefmt='simple', numalign='center')}")
+	e.set_footer(text=f"{ctx.author.name} ×◊× Rawec", icon_url=str(ctx.author.display_avatar))
 	#(text=f"{member.name} × Rawec", icon_url=member.avatar_url)
 	await ctx.send(embed=e)
-
 
 
 
