@@ -7,7 +7,7 @@ import sqlalchemy
 import tabulate 
 from tabulate import tabulate as tb
 from datetime import datetime, time, date
-
+import emoji
 
 inte = discord.Intents.all()
 bot = commands.Bot(command_prefix = ["Р","р"], intents=inte)
@@ -458,7 +458,26 @@ async def __uv(ctx, resName: str, koeff: int=None):
 
 
 
-#asyc def __x()
+@bot.event
+async def on_reaction_add(reaction, user,):
+	r=reaction.message.content
+	print(r)
+	s=r.split()
+	print(s[1])
+	#print(s)
+
+	for i in s:
+		if emoji.is_emoji(i)==True:
+			print(i)
+			async for user in reaction.users():
+				print(reaction)
+				if str(reaction)==str(s[0]):
+					print(user.name)
+					k=int(s[1].replace("<@&","").replace(">",""))
+					print(k)
+					l=discord.Guild.get_role(reaction.message.guild, k)
+					
+					await user.add_roles(l)
 
 
 
