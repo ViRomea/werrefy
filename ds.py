@@ -17,7 +17,6 @@ if os.name=="nt":
 else:
 	DATABASE="database.db"
 
-
 conn = sqlite3.connect(DATABASE)
 c = conn.cursor()
 
@@ -345,7 +344,6 @@ async def zp(ctx, member: discord.Member=None):
 
 
 
-
 @bot.command(name="лзп")
 async def __lz(ctx, member: discord.Member=None):
 	if member is None:
@@ -478,8 +476,6 @@ async def on_reaction_add(reaction, user,):
 					l=discord.Guild.get_role(reaction.message.guild, k)
 					
 					await user.add_roles(l)
-
-
 
 bot.run(sets["token"])
 
